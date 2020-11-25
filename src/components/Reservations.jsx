@@ -26,12 +26,10 @@ class Reservations extends React.Component {
 
     render() {
 
-        console.log('IN THE RENDER METHOD')
-
         return (
             <Container>
                 <div className="mb-5">
-                    <h2>RESERVATIONS</h2>
+                   {this.props.header ? <h2>{this.props.header}</h2>: <h2>Reservations</h2>}
                     {
                         this.state.loading && (
                             <div className="font-bold d-flex justify-content-center">

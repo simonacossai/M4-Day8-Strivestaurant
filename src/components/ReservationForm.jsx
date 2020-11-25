@@ -76,15 +76,7 @@ class ReservationForm extends React.Component {
         return (
             <div>
                 {
-                    this.state.errMessage && (
-                        <Alert variant="danger">
-                            We encountered a problem with your request
-                            {this.state.errMessage}
-                        </Alert>
-                    )
-                }
-                {
-                    this.state.loading && (
+                     this.state.loading && (
                         <div className="d-flex justify-content-center my-5">
                             Reserving your table, please wait
                             <div className="ml-2">
@@ -93,7 +85,16 @@ class ReservationForm extends React.Component {
                         </div>
                     )
                 }
-                <Form className="w-100 mb-5" onSubmit={this.submitReservation}>
+                {
+                      this.state.errMessage ? (
+                        <Alert variant="danger">
+                            We encountered a problem with your request
+                            {this.state.errMessage}
+                        </Alert>
+                  
+                    ):
+                
+                (<Form className="w-100 mb-5" onSubmit={this.submitReservation}>
                     <Row>
                         <Col md={6}>
                             <Form.Group>
@@ -193,6 +194,8 @@ class ReservationForm extends React.Component {
                     </Row>
                     <Button type="submit">Submit</Button>
                 </Form>
+                )
+            }
             </div>
         )
     }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const SingleDish = (props) => (
   <>
+  {props.dish ?
     <Row>
       <Col md={8} className="ml-auto mr-auto">
         <Row>
@@ -26,6 +27,8 @@ const SingleDish = (props) => (
         </Row>
       </Col>
     </Row>
+    : <h1>no dish here!</h1>
+    }
   </>
 )
 
