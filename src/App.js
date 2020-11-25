@@ -11,11 +11,15 @@ import DishDetails from "./components/DishDetails";
 import Menu from "./components/Menu";
 
 class App extends React.Component {
+  state={
+    show: false,
+  }
+
   render() {
     return (
       <>
         <Router>
-          <NavBar title="Strivestaurant" />
+          <NavBar title="Strivestaurant" show={this.show}/>
           <Route
             path="/"
             exact

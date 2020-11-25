@@ -7,7 +7,13 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     console.log("starting to render")
+    this.state={
+      show: false
+    }
 }
+
+
+
   render(){
   return (
     <div>
@@ -27,7 +33,9 @@ class NavBar extends React.Component {
               <div className={this.props.location.pathname === '/reservation' ? 'nav-link active' : 'nav-link'}>Reservation</div>
             </Link>
             <Nav.Link>Our Location</Nav.Link>
-            <Nav.Link>My favourite</Nav.Link>
+           
+          {window.location.search.includes("Carbonara") && <Nav.Link>My favourite</Nav.Link>}
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
