@@ -20,7 +20,7 @@ class Home extends Component {
                     src={item.image}
                     alt={item.name}
                     onClick={() =>
-                      this.props.history.push("/details/" + item.id+"?dish="+ item.name)
+                      this.props.history.push("/details/" + item.id)
                     }
                   />
                   <Carousel.Caption>

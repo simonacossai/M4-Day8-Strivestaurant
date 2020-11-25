@@ -9,7 +9,7 @@ const SingleDish = (props) => (
       <Col md={8} className="ml-auto mr-auto">
         <Row>
           <Col md={4}>
-            <Link to={"/details/" + props.dish.id+"?dish="+ props.dish.name}>
+            <Link to={"/details/" + props.dish.id}>
               <Image
                 src={props.dish.image}
                 className="my-2 w-100 h-auto"

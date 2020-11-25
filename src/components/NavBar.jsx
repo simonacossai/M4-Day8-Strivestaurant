@@ -6,13 +6,16 @@ class NavBar extends React.Component {
  
   constructor(props) {
     super(props);
+
     console.log("starting to render")
     this.state={
       show: false
     }
 }
-
-
+componentDidMount(){
+  console.log("props", this.props);
+  let dishIdFromTheSearchBar = this.props.history.location.pathname.includes("2");
+}
 
   render(){
   return (
@@ -34,7 +37,7 @@ class NavBar extends React.Component {
             </Link>
             <Nav.Link>Our Location</Nav.Link>
            
-          {window.location.search.includes("Carbonara") && <Nav.Link>My favourite</Nav.Link>}
+          {this.props.history.location.pathname.includes("2") && <Nav.Link>My favourite</Nav.Link>}
             
           </Nav>
         </Navbar.Collapse>
